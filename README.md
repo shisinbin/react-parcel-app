@@ -17,15 +17,26 @@ Before you start, ensure that you have Node.js and npm installed on your machine
    ```
    npm init -y
    ```
-3. Install React, React DOM, and Parcel as project dependencies:
+3. Install React, React DOM, Parcel, ESLint and Prettier as project dependencies:
    ```
    npm install react react-dom
-   npm install --save parcel
+   npm install parcel
+   npm install eslint prettier
+   ```
+4. Set up ESLint with a popular configuration:
+   ```
+   npm install eslint-config-react-app
+   ```
+   Create a file named `.eslintrc.json` in your project's root folder and add the following content:
+   ```
+   {
+     "extends": "react-app"
+   }
    ```
 
 ## Project structure
 
-Once you've completed the initial setup, you can choose your project structure. The structure chosen for this repo is this:
+Once you've completed the initial setup, you can choose your project structure. The structure chosen for this repo is shown below.
 
 ```
 my-react-app/
@@ -40,6 +51,7 @@ my-react-app/
   ├── index.js
   ├── global-styles.css
   ├── .gitignore
+  ├── .eslintrc.json
   ├── package.json
   ├── package-lock.json
 
@@ -88,8 +100,11 @@ If you encounter build errors or unexpected issues, consider clearing the Parcel
 rm -rf .parcel-cache
 ```
 
+Also, if there are any issues with Prettier, reloading VSCode (or whatever source-code editor you use) may help.
+
 ## Credits
 
 - [Building a web app with Parcel](https://parceljs.org/getting-started/webapp/)
 - [React recipe](https://parceljs.org/recipes/react/)
-- [Joy of React \[Josh W Comeau\]](https://courses.joshwcomeau.com/joy-of-react)
+- [Joy of React](https://courses.joshwcomeau.com/joy-of-react)
+- [eslint-config-react-app](https://www.npmjs.com/package/eslint-config-react-app)
