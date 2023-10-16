@@ -92,4 +92,4 @@ rm -rf .parcel-cache
 
 - [Building a web app with Parcel](https://parceljs.org/getting-started/webapp/)
 - [React recipe](https://parceljs.org/recipes/react/)
-- [Joy of React \[Josh W Comeau\]]()
+- [Joy of React \[Josh W Comeau\]](https://courses.joshwcomeau.com/joy-of-react)
