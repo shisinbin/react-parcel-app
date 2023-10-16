@@ -26,6 +26,7 @@ Before you start, ensure that you have Node.js and npm installed on your machine
 ## Project structure
 
 Once you've completed the initial setup, you can choose your project structure. The structure chosen for this repo is this:
+
 ```
 my-react-app/
   ├── node_modules/
@@ -61,6 +62,7 @@ If you're curious about this particular structure, check out [this link](https:/
 ## Git Integration
 
 You can initialise a Git repository in your project folder using the following commands:
+
 ```
 git init
 git add .
@@ -72,13 +74,15 @@ Don't forget to create a `.gitignore` file in your project folder (see the one i
 ## Installing additional packages
 
 You can install additional packages using the `npm install` command. For example, to install a package named `new-component`, use the following:
+
 ```
 npm install new-component
 ```
 
-### Common issues
+## Common issues
 
 If you encounter build errors or unexpected issues, consider clearing the Parcel cache:
+
 ```
 rm -rf .parcel-cache
 ```
@@ -86,5 +90,5 @@ rm -rf .parcel-cache
 ## Credits
 
 - [Building a web app with Parcel](https://parceljs.org/getting-started/webapp/)
-- [React \[recipe\]](https://parceljs.org/recipes/react/)
+- [React recipe](https://parceljs.org/recipes/react/)
 - [Joy of React \[Josh W Comeau\]]()
