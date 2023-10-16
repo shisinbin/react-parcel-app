@@ -34,14 +34,15 @@ my-react-app/
   │   ├── index.html
   ├── src/
   │   ├── components/
-  │   │   │   ├── App/
-  │   │   │   │   ├── App.js
-  │   │   │   │   ├── index.js
-  │   ├── index.js
-  │   ├── global-styles.css
+  │   │   ├── App/
+  │   │   │   ├── App.js
+  │   │   │   ├── index.js
+  ├── index.js
+  ├── global-styles.css
   ├── .gitignore
   ├── package.json
   ├── package-lock.json
+
 ```
 
 If you're curious about this particular structure, check out [this link](https://www.joshwcomeau.com/react/file-structure/).
