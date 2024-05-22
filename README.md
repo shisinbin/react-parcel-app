@@ -100,7 +100,26 @@ If you encounter build errors or unexpected issues, consider clearing the Parcel
 rm -rf .parcel-cache
 ```
 
-Also, if there are any issues with Prettier, reloading VSCode (or whatever source-code editor you use) may help.
+Or better yet, install a cross-platform tool for removing files/directories:
+
+```
+npm install rimraf
+```
+
+Before adding this script to your `package.json` file, which will automatically run everytime before `npm run dev`, and will remove the `dist` and `.parcel-cache` folders to help ensure a fresh development environment:
+
+<pre>
+  <code>
+  "scripts": {
+    <strong>"predev": "rimraf .parcel-cache dist",</strong>
+    "new-component": "new-component",
+    "dev": "parcel public/index.html",
+    "build": "parcel build public/index.html"
+  },
+  </code>
+</pre>
+
+If there are any issues with Prettier, reloading VSCode (or whatever source-code editor you use) may help.
 
 ## Credits
 
