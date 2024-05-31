@@ -1,26 +1,30 @@
 {
   "name": "my-first-parcel-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "shisinbin",
   "scripts": {
     "predev": "rimraf .parcel-cache dist",
     "new-component": "new-component",
     "dev": "parcel public/index.html",
     "build": "parcel build public/index.html"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "eslint": "^8.51.0",
     "eslint-config-react-app": "^7.0.1",
     "new-component": "^5.0.2",
     "parcel": "^2.10.0",
+    "parcel-reporter-static-files-copy": "^1.5.3",
     "prettier": "^2.6.2",
     "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rimraf": "^5.0.7"
+    "rimraf": "^5.0.7",
+    "styled-components": "^6.1.11"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^2.1.4"
+  },
+  "staticFiles": {
+    "staticPath": "assets"
   }
 }

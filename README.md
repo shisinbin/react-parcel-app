@@ -1,6 +1,6 @@
 # Creating a React App with Parcel
 
-This repository provides a step-by-step guide on how to create a basic React application using Parcel, a fast web application bundler. Whether you're new to React or simply exploring Parcel as a bundler, this guide will help you set up your project quickly and efficiently.
+This repository provides a step-by-step guide on how to create a basic React application using Parcel, a fast web application bundler.
 
 ## Prerequisites
 
@@ -92,6 +92,8 @@ You can install additional packages using the `npm install` command. For example
 npm install new-component
 ```
 
+(Note: This is a cool package that helps with the suggested file structure. Add this to `"scripts"` in `package.json`: `"new-component": "new-component",`, then any time you want to add a new component, run: `npm run new-component NameOfNewComponent`)
+
 ## Common issues
 
 If you encounter build errors or unexpected issues, consider clearing the Parcel cache:
@@ -106,13 +108,12 @@ Or better yet, install a cross-platform tool for removing files/directories:
 npm install rimraf
 ```
 
-Before adding this script to your `package.json` file, which will automatically run everytime before `npm run dev`, and will remove the `dist` and `.parcel-cache` folders to help ensure a fresh development environment:
+Then add this script to your `package.json` file, which will automatically run everytime before `npm run dev`, and will remove the `dist` and `.parcel-cache` folders to help ensure a fresh development environment:
 
 <pre>
   <code>
   "scripts": {
     <strong>"predev": "rimraf .parcel-cache dist",</strong>
-    "new-component": "new-component",
     "dev": "parcel public/index.html",
     "build": "parcel build public/index.html"
   },
@@ -121,9 +122,56 @@ Before adding this script to your `package.json` file, which will automatically 
 
 If there are any issues with Prettier, reloading VSCode (or whatever source-code editor you use) may help.
 
+## Updates
+
+1. If working with **Styled Components**, in order to get annotated class names corresponding to component names, run:
+   ```
+   npm install --save-dev babel-plugin-styled-components
+   ```
+   Then add a configuration file name `.babelrc` with the following content in the root folder of your project:
+   ```
+   {
+     "plugins": ["babel-plugin-styled-components"]
+   }
+   ```
+2. If you want to specify where your static files go, then you can install a package with this command:
+   ```
+   npm install parcel-reporter-static-files-copy
+   ```
+   Add this is `package.json` (choosing to name the static folder `assets`):
+   ```
+   "staticFiles": {
+     "staticPath": "assets"
+   }
+   ```
+   Create a new configuration file `.parcelrc` and add this to it:
+   ```
+   {
+     "extends": [
+       "@parcel/config-default"
+     ],
+     "reporters": [
+       "...",
+       "parcel-reporter-static-files-copy"
+     ]
+   }
+   ```
+   Create a new folder in your root called `assets`. This is where you can put images, etc. For example, you put the file `bunny.png` directly in the assets folder, then the image element that uses it might look like this:
+   ```
+   <img alt="Cute bunny" src="/bunny.png" />
+   ```
+3. I had some issues with the installation of the ESLint configuration, which may or may not have something to do with the latest version of ESLint. So, maybe install both at the same time with this particular version of ESLint (as suggested from the config package description):
+   ```
+   npm install eslint-config-react-app eslint@^8.0.0
+   ```
+
 ## Credits
 
+- [Joy of React](https://courses.joshwcomeau.com/joy-of-react)
 - [Building a web app with Parcel](https://parceljs.org/getting-started/webapp/)
 - [React recipe](https://parceljs.org/recipes/react/)
-- [Joy of React](https://courses.joshwcomeau.com/joy-of-react)
 - [eslint-config-react-app](https://www.npmjs.com/package/eslint-config-react-app)
+- [parcel-reporter-static-files-copy](https://www.npmjs.com/package/parcel-reporter-static-files-copy)
+- [styled-components](https://www.npmjs.com/package/styled-components)
+- [babel-plugin-styled-components](https://www.npmjs.com/package/babel-plugin-styled-components)
+- [new-component](https://www.npmjs.com/package/new-component)
