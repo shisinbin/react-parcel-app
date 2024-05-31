@@ -92,7 +92,7 @@ You can install additional packages using the `npm install` command. For example
 npm install new-component
 ```
 
-(Note: This is a cool package that helps with the suggested file structure. Add this to `"scripts"` in `package.json`: `"new-component": "new-component",`, then any time you want to add a new component, run: `npm run new-component NameOfNewComponent`)
+(Note: This is a cool package that helps with the suggested file structure. If not already added after installing, add this to `"scripts"` in `package.json`: `"new-component": "new-component",`, then any time you want to add a new component, run: `npm run new-component NameOfNewComponent`)
 
 ## Common issues
 
@@ -138,7 +138,7 @@ If there are any issues with Prettier, reloading VSCode (or whatever source-code
    ```
    npm install parcel-reporter-static-files-copy
    ```
-   Add this is `package.json` (choosing to name the static folder `assets`):
+   Add this to `package.json` (here I'm choosing to name the static folder `assets`):
    ```
    "staticFiles": {
      "staticPath": "assets"
@@ -156,7 +156,7 @@ If there are any issues with Prettier, reloading VSCode (or whatever source-code
      ]
    }
    ```
-   Create a new folder in your root called `assets`. This is where you can put images, etc. For example, you put the file `bunny.png` directly in the assets folder, then the image element that uses it might look like this:
+   Create a new folder in your root called `assets` (or whatever you've named the folder). This is where you can put images, etc. For example, you put the file `bunny.png` directly in the assets folder, then the image element that uses it might look like this:
    ```
    <img alt="Cute bunny" src="/bunny.png" />
    ```
